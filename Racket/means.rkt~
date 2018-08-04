@@ -1,0 +1,14 @@
+#lang racket
+(define (AM . args)
+  (/ (apply + args)
+     (length args)))
+
+(define (HM . args)
+  (/ (length args)
+     (apply + (map / args))))
+
+(define (am x y)
+  (/ (+ x y) 2))
+
+(define (hm x y)
+  (/ 2 (+ (/ x) (/ y)))
