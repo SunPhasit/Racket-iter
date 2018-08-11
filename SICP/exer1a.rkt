@@ -1,6 +1,6 @@
 
 
-;;;=== exer1.rkt === Status : unfinished
+;;;=== exer1.rkt === Status : finished
 ; Exercise 1.1
 ; Exercise 1.2
 ; Exercise 1.3
@@ -306,4 +306,6 @@
 ; F(n+1) = F(n-1) + F(n)
 ;        = ((p^(n-1) - q^(n-1))/r(5)) + ((p^n - q^n)/r(5))
 ;        = (p^(n-1)*(1+p)-(q^(n-1)*(1+q)))/r(5)
-;        = (
+;        = (p^(n-1)*(p^2)-(q^(n-1)*(q^2)))/r(5)
+; F(n+1) = (p^(n+1)-q^(n+1))/r(5) => Q(n+1) is true #
+; Therefore, Q(n) is true for all n >= 0
