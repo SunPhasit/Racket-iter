@@ -11,6 +11,9 @@
 ; Exercise 1.8
 ; Exercise 1.9
 ; Exercise 1.10
+; Exercise 1.11
+; Exercise 1.12
+; Exercise 1.13
 
 ; Exercise 1.1
 #lang racket
@@ -272,9 +275,35 @@
 
 ; Exercise 1.11
 
-(define (f n)
+(define (f2 n)
   (let loop ((a 0) (b 1) (c 2) (N n))
     (if (= N 0)
         a
         (loop b c (+ c (* 2 b) (* 3 a)) (- N 1)))))
-        
+
+; Exercise 1.12
+
+(define (Pa row ele)
+  (cond ((or (= ele 1)
+             (= ele row)) 1)
+        (else (+ (Pa (- row 1) ele)
+                 (Pa (- row 1) (- ele 1))))))
+
+; Exercise 1.13
+; For this, I will use induction
+; Let p = (1 + r(5))/2, q = (1 - r(5))/2 and F(n) to be the fibbonanci function where n >= 0
+; Let statement Q(n) be that F(n) = the closest integer to (p^n - q^n)/r(5)
+; We'll need to prove the base cases, F(0) and F(1)
+;  From F(n) = (p^n - q^n)/r(5)
+;       F(0) = (p^0 - q^0)/r(5)
+;            = (1-1)/r(5) = 0 #
+;       F(1) = (p^1 - q^1)/r(5)
+;            = ((1 + r(5))/2 - (1 - r(5))/2)/r(5) 
+;            = (r(5)/2 + r(5)/2)/r(5) = r(5)/r(5) = 1 #
+; So, Q(0) and Q(1) is true
+; Now, we'll assume that Q(n-1) and Q(n) is true
+; From here, we'll prove that Q(n+1) is true
+; F(n+1) = F(n-1) + F(n)
+;        = ((p^(n-1) - q^(n-1))/r(5)) + ((p^n - q^n)/r(5))
+;        = (p^(n-1)*(1+p)-(q^(n-1)*(1+q)))/r(5)
+;        = (
