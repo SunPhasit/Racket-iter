@@ -1,6 +1,6 @@
+#lang racket
 
-
-;;;=== exer1.rkt === Status : finished
+;;;=== exer1a.rkt === Status : finished
 ; Exercise 1.1
 ; Exercise 1.2
 ; Exercise 1.3
@@ -16,7 +16,6 @@
 ; Exercise 1.13
 
 ; Exercise 1.1
-#lang racket
 
 10
 ; 10
